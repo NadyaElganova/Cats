@@ -1,0 +1,63 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+.page-container {
+    display: flex;
+    justify-content: center; /* ÷ентрирование по горизонтали */
+    align-items: center; /* ÷ентрирование по вертикали */
+    min-height: 100vh; /* ћинимальна€ высота всей страницы */
+}
+
+/* —тили дл€ карточки */
+.card {
+    width: 700px;
+    height: 1800px;
+}
+
+/* —тили дл€ контейнера карусели */
+#carouselExample {
+    max-width: 100%; /* ћаксимальна€ ширина контейнера карусели (по размерам карточки) */
+    height: 60%; /* ¬ысота карусели по вашему выбору */
+    margin: 0 auto; /* ÷ентрируйте карусель по горизонтали */
+}
+
+/* —тили дл€ контейнера изображений внутри карусели */
+.carousel-inner {
+    width: 100%; /* «аполн€йте 100% ширины контейнера изображений */
+    height: 100%; /* «аполн€йте 100% высоты контейнера изображений */
+    overflow: hidden; /* ќбрезайте всЄ, что выходит за пределы контейнера */
+}
+
+    /* —тили дл€ изображений внутри карусели */
+    .carousel-inner img {
+        width: 100%; /* «аполн€йте 100% ширины контейнера изображений */
+        height: 100%; /* «аполн€йте 100% высоты контейнера изображений */
+        object-fit: cover; /* —охран€йте соотношение сторон и обрезайте лишнее (как фоновое изображение) */
+    }
+
+#rating {
+    width: 150px;
+    vertical-align: middle;
+    height: 120px;
+    display: flex;
+}
+

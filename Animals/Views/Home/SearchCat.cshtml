@@ -1,0 +1,59 @@
+﻿@model Cat
+@{
+    ViewData["Title"] = "Search";
+}
+
+<div class="page-container">
+
+
+<div class="card">
+    <div id="carouselExample" class="card-img-top carousel slide">
+        <div class="carousel-inner">
+            @if (@Model.photos == null)
+            {
+                <div class="carousel-item">
+                        <img onerror="event.target.src='~/img/placeholder.png'" class="d-block w-100"> 
+                </div>
+            }
+            else
+            {
+                @foreach (Photo item in @Model.photos)
+                {
+                    <div class="carousel-item @(item == Model.photos.First() ? "active" : "")">
+                            <img src="@item.url" class="d-block w-100">
+                    </div>
+                }
+            }
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Предыдущий</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Следующий</span>
+            </button>
+        </div>
+    </div>
+
+
+    <div class="card-body">
+        <h5 class="card-title">@Model.name</h5>
+        <p class="card-text">@Model.description</p>
+            <p class="card-text">- - -  - - -</p>
+            <p class="card-text">@Model.temperament</p>
+            <h4 class="card-title">Rating: </h4>
+
+            <div class="star-rating">
+                <label>Adaptability</label>
+                <img id="rating" src="/img/@(Model.adaptability).png">
+                <label>dog_friendly</label>
+                <img id="rating" src="/img/@(Model.dog_friendly).png">
+                <label>energy_level</label>
+                <img id="rating" src="/img/@(Model.energy_level).png">
+            </div>
+
+            <a href="@Model.wikipedia_url" class="btn btn-warning">Wikipedia</a>
+    </div>
+</div>
+
+</div>
